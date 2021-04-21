@@ -1,7 +1,13 @@
-const Todo = () => {
+import TaskItem from "./TaskItem";
+
+const Todo = ({ todo, setTodo }) => {
   return (
-    <div class="todo-container">
-      <ul class="todo-list"></ul>
+    <div className="todo-container">
+      <ul className="todo-list">
+        {todo.map((item) => (
+          <TaskItem task={item.task} key={item.id} />
+        ))}
+      </ul>
     </div>
   );
 };
